@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'; 
 
-
 import woodyImage from './assets/woody.jpg';
 import floralImage from './assets/floral.jpg';
 import menSuitImage from './assets/men-suit.jpg';
@@ -27,147 +26,129 @@ const sampleProducts = [
   { 
     id: 1, 
     name: 'Woody Scent',
-     price: 1200, 
-     image:woodyImage 
-    },
-
-  {
-     id: 2,
-      name: 'Floral Perfume',
-       price: 1500, 
-       image:floralImage 
-      },
-      
-  {
-     id: 3,
-      name: "Men's Suit", 
-      price: 3500, 
-      image: menSuitImage 
-    },
-
-  { id: 4,
-     name: "Ladies' African Dress", 
-     price: 2800,
-      image: africanDressImage 
-    },
-
+    price: 1200, 
+    image: woodyImage 
+  },
   { 
-    id: 5,
-     name: 'Baby Stroller',
-      price: 5000,
-       image: strollerImage 
-      },
-
+    id: 2, 
+    name: 'Floral Perfume',
+    price: 1500, 
+    image: floralImage 
+  },
+  { 
+    id: 3, 
+    name: "Men's Suit", 
+    price: 3500, 
+    image: menSuitImage 
+  },
+  { 
+    id: 4, 
+    name: "Ladies' African Dress", 
+    price: 2800,
+    image: africanDressImage 
+  },
+  { 
+    id: 5, 
+    name: 'Baby Stroller',
+    price: 5000,
+    image: strollerImage 
+  },
   { 
     id: 6, 
-     name: "Newborn Baby Clothes Set",
-      price: 2200, 
-      image: babyClothesImage
-     },
-
+    name: "Newborn Baby Clothes Set",
+    price: 2200, 
+    image: babyClothesImage 
+  },
   { 
     id: 7, 
     name: "Baby Walker",
-     price: 4500,
-      image: walkerImage
-     },
-
+    price: 4500,
+    image: walkerImage 
+  },
   { 
-    id: 8,
-     name: "Men's Casual Shirt",
-      price: 1700, 
-      image: mensShirtImage
-     },
-
-  {
-     id: 9,
-      name: "Men's Summer T-shirt",
-       price: 1200,
-        image: tshirtImage
-       },
-
-  {
-     id: 10, 
-     name: "Men's Khaki Shorts", 
-     price: 1600, 
-     image: shortsImage
-     },
-
-  {
-     id: 11,
-      name: "Men's Boxers", 
-      price: 1000,
-       image: boxersImage
-       },
-
-  {
-    id: 12,
-     name: "Men's Wallet",
-      price: 800, 
-      image: walletImage 
-    },
-
+    id: 8, 
+    name: "Men's Casual Shirt",
+    price: 1700, 
+    image: mensShirtImage 
+  },
   { 
-    id: 13,
-     name: "Ladies' Strapless Bra", 
-     price: 900, 
-     image: braImage 
-    },
-
-  {
-     id: 14,
-      name: "Undergarments Set",
-       price: 1300, 
-       image: undergarmentsImage 
-      },
-
-  {
-     id: 15, 
-     name: "Sun Dress", 
-     price: 2000, 
-     image: sundressImage 
-    },
-
+    id: 9, 
+    name: "Men's Summer T-shirt",
+    price: 1200,
+    image: tshirtImage 
+  },
+  { 
+    id: 10, 
+    name: "Men's Khaki Shorts", 
+    price: 1600, 
+    image: shortsImage 
+  },
+  { 
+    id: 11, 
+    name: "Men's Boxers", 
+    price: 1000,
+    image: boxersImage 
+  },
+  { 
+    id: 12, 
+    name: "Men's Wallet",
+    price: 800, 
+    image: walletImage 
+  },
+  { 
+    id: 13, 
+    name: "Ladies' Strapless Bra", 
+    price: 900, 
+    image: braImage 
+  },
+  { 
+    id: 14, 
+    name: "Undergarments Set",
+    price: 1300, 
+    image: undergarmentsImage 
+  },
+  { 
+    id: 15, 
+    name: "Sun Dress", 
+    price: 2000, 
+    image: sundressImage 
+  },
   { 
     id: 16, 
     name: "Vitenge Dress",
-     price: 2500,
-      image: vitengeImage 
-    },
-
-  {
-     id: 17, 
-     name: "Official Jeans (Ladies)", 
-     price: 1800,
-      image: jeansImage 
-    },
-
+    price: 2500,
+    image: vitengeImage 
+  },
   { 
-    id: 18,
-     name: "Tote Bag", 
-     price: 1100,
-      image: toteImage 
-    },
-
+    id: 17, 
+    name: "Official Jeans (Ladies)", 
+    price: 1800,
+    image: jeansImage 
+  },
   { 
-    id: 19, name: "Sling Bag", 
+    id: 18, 
+    name: "Tote Bag", 
+    price: 1100,
+    image: toteImage 
+  },
+  { 
+    id: 19, 
+    name: "Sling Bag", 
     price: 950, 
-    image: slingImage
-   },
-
-  {
-     id: 20,
-      name: "Accessories Set",
-       price: 1500, 
-       image: accessoriesImage
-       },
+    image: slingImage 
+  },
+  { 
+    id: 20, 
+    name: "Accessories Set",
+    price: 1500, 
+    image: accessoriesImage 
+  },
 ];
+
 
 function LuxeShop() {
   const [theme, setTheme] = useState('light');
   const [cart, setCart] = useState([]);
-  const [input, setInput] = useState('');
-  const [orderItems, setOrderItems] = useState([]);
 
   useEffect(() => {
     document.body.className = theme;
@@ -178,18 +159,26 @@ function LuxeShop() {
   };
 
   const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
-
-  const addOrderItem = () => {
-    if (input.trim()) {
-      setOrderItems([...orderItems, input]);
-      setInput('');
+    const existingProduct = cart.find(item => item.id === product.id);
+    if (existingProduct) {
+      
+      setCart(cart.map(item => 
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      ));
+    } else {
+      
+      setCart([...cart, { ...product, quantity: 1 }]);
     }
   };
 
   const calculateTotal = () => {
-    return cart.reduce((total, item) => total + item.price, 0);
+    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+  };
+
+  const generateWhatsAppMessage = () => {
+    const orderDetails = cart.map(item => `${item.name} - KES ${item.price} x ${item.quantity}`).join('\n');
+    const total = calculateTotal();
+    return `Order Details:\n${orderDetails}\nTotal: KES ${total}`;
   };
 
   return (
@@ -228,38 +217,21 @@ function LuxeShop() {
           <>
             <ul>
               {cart.map((item, index) => (
-                <li key={index}>{item.name} - KES {item.price}</li>
+                <li key={index}>
+                  {item.name} - KES {item.price} x {item.quantity}
+                </li>
               ))}
             </ul>
             <p className="total">Total: KES {calculateTotal()}</p>
+            <a
+              href={`https://wa.me/254799757915?text=${encodeURIComponent(generateWhatsAppMessage())}`}
+              target="_blank"
+              rel="noreferrer"
+              className="order-button"
+            >
+              WhatsApp Order
+            </a>
           </>
-        )}
-      </section>
-
-      <section className="order-section">
-        <h2>Quick Order 🛒</h2>
-        <p>Let us know what you want. We'll confirm with you via WhatsApp or email.</p>
-        <form onSubmit={(e) => { e.preventDefault(); addOrderItem(); }}>
-          <div className="input-container">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="e.g. Floral Perfume, Baby Stroller"
-              className="input-field"
-            />
-            <button type="submit" className="add-button">Add</button>
-          </div>
-        </form>
-        {orderItems.length > 0 && (
-          <div className="list-wrapper">
-            <h4>Your Order</h4>
-            <ol>
-              {orderItems.map((item, index) => (
-                <li key={index} className="list-item">{item}</li>
-              ))}
-            </ol>
-          </div>
         )}
       </section>
 
@@ -269,14 +241,6 @@ function LuxeShop() {
         <p><strong>Open Daily:</strong> 8:00 AM to 5:00 PM</p>
         <div className="contact-links">
           <a href="mailto:kelvinkmwangi07@gmail.com" className="contact-button">Email Us</a>
-          <a
-            href="https://wa.me/254799757915?text=Hi%20there%2C%20I%20am%20interested%20in%20ordering"
-            target="_blank"
-            rel="noreferrer"
-            className="order-button"
-          >
-            WhatsApp Order
-          </a>
         </div>
       </footer>
     </div>
