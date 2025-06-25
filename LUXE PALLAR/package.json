@@ -2,11 +2,10 @@
   "name": "luxe-pallar",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "module" ,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -24,7 +23,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "gh-pages": "^4.0.0"  
   },
   "homepage": "https://kelvinkariuki07.github.io/LUXE-PALLAR"
 }
