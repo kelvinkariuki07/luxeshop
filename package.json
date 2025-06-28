@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://kelvinkariuki07.github.io/LUXE-PALLAR/",
+  "homepage": "https://kelvinkariuki07.github.io/luxeshop/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
