@@ -217,15 +217,17 @@ function LuxeShop() {
                 <li key={index}>{item.name} - KES {item.price} x {item.quantity}</li>
               ))}
             </ul>
-            <p className="total">Total: KES {calculateTotal()}</p>
-            <a
-              href={`https://wa.me/254799757915?text=${encodeURIComponent(generateWhatsAppMessage())}`}
-              target="_blank"
-              rel="noreferrer"
-              className="order-button"
-            >
-              WhatsApp Order
-            </a>
+           
+     <p className="total">Total: KES {calculateTotal()}</p>
+<a
+  href={`https://wa.me/254799757915?text=${encodeURIComponent(generateWhatsAppMessage())}`}
+  target="_blank"
+  rel="noreferrer"
+  className="order-button"
+>
+  WhatsApp Order
+</a>
+
           </>
         )}
       </section>
