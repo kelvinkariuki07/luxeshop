@@ -188,7 +188,9 @@ function LuxeShop() {
       </header>
 
       <section className="hero-section">
-        <h1>LUXE PERFUME AND WEARS</h1>
+      <h1>LUXE COLLECTION – Fragrance, Fashion & More</h1>
+
+
         <p>Fragrances and quality outfits for men, women, and babies. Delivered free within Nairobi CBD!</p>
       </section>
 
