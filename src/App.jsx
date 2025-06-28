@@ -145,7 +145,6 @@ const sampleProducts = [
   },
 ];
 
-
 function LuxeShop() {
   const [theme, setTheme] = useState('light');
   const [cart, setCart] = useState([]);
@@ -161,12 +160,8 @@ function LuxeShop() {
   const addToCart = (product) => {
     const existingProduct = cart.find(item => item.id === product.id);
     if (existingProduct) {
-      
-      setCart(cart.map(item => 
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-      ));
+      setCart(cart.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item));
     } else {
-      
       setCart([...cart, { ...product, quantity: 1 }]);
     }
   };
@@ -213,13 +208,13 @@ function LuxeShop() {
 
       <section className="cart-section">
         <h3>Your Cart</h3>
-        {cart.length === 0 ? <p>No items in cart yet.</p> : (
+        {cart.length === 0 ? (
+          <p>No items in cart yet.</p>
+        ) : (
           <>
             <ul>
               {cart.map((item, index) => (
-                <li key={index}>
-                  {item.name} - KES {item.price} x {item.quantity}
-                </li>
+                <li key={index}>{item.name} - KES {item.price} x {item.quantity}</li>
               ))}
             </ul>
             <p className="total">Total: KES {calculateTotal()}</p>
@@ -237,11 +232,9 @@ function LuxeShop() {
 
       <footer className="info-section">
         <h3>Visit or Contact Us 📍</h3>
-        <p><strong>Location:</strong> Family Bank Building second floor, Riverroad, Nairobi, </p>
+        <p><strong>Location:</strong> Family Bank Building second floor,<br />Riverroad, Nairobi</p>
         <p><strong>Open Daily:</strong> 8:00 AM to 5:00 PM</p>
-        <div className="contact-links">
-          <a href="mailto:kelvinkmwangi07@gmail.com" className="contact-button">Email Us</a>
-        </div>
+        <a href="mailto:kelvinkmwangi07@gmail.com" className="contact-button">Email Us</a>
       </footer>
     </div>
   );
